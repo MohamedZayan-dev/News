@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">NewsApp</string>
+
+<!--
+attributes for SectionName preference
+-->
+    <string name="sectionNameTitle">News Section</string>
+    <string name="sectionNameKey" translatable="false"> SectionNameKey</string>
+    <string name="sectionNameDefault" translatable="false">news</string>
+
+    <!--
+        attributes for ListPreference orderBy
+        -->
+    <string name="ListPreferenceTitle">Order By</string>
+    <string name="ListPreferenceKey" translatable="false">OrderByKey</string>
+    <string name="ListPreferenceDefault" translatable="false">Order By</string>
+
+    <!--
+    attributes for ListPreference orderBy Newest
+    -->
+    <string name="orderByNewestTitle">newest</string>
+    <string name="orderByNewestDefault" translatable="false">newest</string>
+
+    <!--
+    attributes for ListPreference orderBy Oldest
+    -->
+    <string name="OrderByOldestTitle">oldest</string>
+    <string name="OrderByOldestDefault" translatable="false">oldest</string>
+
+    <!--
+ attributes for ListPreference orderBy relevance
+ -->
+    <string name="orderByRelevanceTitle">relevance</string>
+    <string name="orderByRelevanceDefault" translatable="false">relevance</string>
+</resources>

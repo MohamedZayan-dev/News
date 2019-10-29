@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<string-array name="SettingsOrderByTitles">
+    <item>@string/orderByNewestTitle</item>
+    <item>@string/OrderByOldestTitle</item>
+    <item>@string/orderByRelevanceTitle</item>
+</string-array>
+    <string-array name="SettingsOrderByDefault">
+        <item>@string/orderByNewestDefault</item>
+        <item>@string/OrderByOldestDefault</item>
+        <item>@string/orderByRelevanceDefault</item>
+    </string-array>
+</resources>
