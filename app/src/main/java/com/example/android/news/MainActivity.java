@@ -34,17 +34,19 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<NewsInfoActivity>> {
+public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<NewsInfoActivity>>, 
+SharedPreferences.OnSharedPreferenceChangeListener{
 
     private static final String url = "https://content.guardianapis.com/search";
     private TextView emptyView;
     NewsAdapterActivity newsAdapterActivity;
-
+    RelativeLayout relativeLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        
+        relativeLayout = findViewById(R.id.mainLayout);
         final ListView listView = (ListView) findViewById(R.id.list);
         newsAdapterActivity = new NewsAdapterActivity(getApplication(), new ArrayList<NewsInfoActivity>());
         listView.setAdapter(newsAdapterActivity);
@@ -62,6 +64,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             }
         });
 
+        relativeLayout.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+        
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
@@ -128,6 +132,13 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+
+        if(key.equals(getString(R.string.sectionNameKey)) || key.equals(getString(R.string.ListPreferenceKey)))
+            loaderManager.restartLoader(0,null,this);
+
     }
 }
 
