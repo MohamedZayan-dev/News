@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NewsApp</string>
+    <string name="app_name">News</string>
 
 <!--
 attributes for SectionName preference
