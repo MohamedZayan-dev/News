@@ -17,6 +17,7 @@ public class NewsSettingsActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
     public static class NewsSettingsFragment extends PreferenceFragment implements Preference.OnPreferenceChangeListener{
